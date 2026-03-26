@@ -1,12 +1,12 @@
 # Basic Calaculator
 
 ## Purpose
--This is a calculator program that perform basic mathematical operations like, Addition, Subtraction, Multiplication, and Division.
+This is a calculator program that perform basic mathematical operations like, Addition, Subtraction, Multiplication, and Division.
 
 ## Input
 - First Number : 78
-  Second Number : 89
-  Operator : '+'
+- Second Number : 89
+- Operator : '+'
 
 ## Output
 -Result : 167
