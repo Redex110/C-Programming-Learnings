@@ -48,9 +48,11 @@ int main(void)
 	}
 
 	//Output
-	printf("Number of Positive Number : %d\n", positive_number);
-	printf("Number of Nagitive Number : %d\n", nagitive_number);
-	printf("Number of Zeros           : %d\n", zero_numbers);
+	printf("-----------------------------------------------------\n");
+	printf(" Number of Positive Number : %d\n", positive_number);
+	printf(" Number of Nagitive Number : %d\n", nagitive_number);
+	printf(" Number of Zeros           : %d\n", zero_numbers);
+	printf("----------------------------------------------------\n");
 
 	return 0;
 }
