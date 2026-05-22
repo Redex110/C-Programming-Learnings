@@ -1,49 +1,59 @@
+
 /*
 --------------------------------------------------
 Program : Legel Age Varification for Driving
-Purpose : 
+Purpose : To varify if the user is at the legel age for driving or not.
 
-Author  : Gray Storm
+Author  : RedeX110
 Date    : 21 May 2026
 
-Input   : 
-Output  : 
+Input   : User Name, User Age.
+Output  : Result : Eligible to drive or not.
 --------------------------------------------------
 */
 
 #include <stdio.h>
-#include <stdbool.h>
 
-bool isEligibleToDrive(int age) {
-  if(age > 18)
-    return true;
-  else
-    return false;
-}
+void isEligibleToDrive(char name[], int age);
 
-void finalResult(char name[], int age, bool result) {
-  printf("+--------------------------------+\n");
-  printf("| Name   : %-22s|\n", name);
-  printf("| Age    : %-22d|\n", age);
-  if(result == true)
-  printf("| Result : Eligible to Drive     |\n");
-  else
-  printf("| Result : Not Eligible to Drive |\n");
-  printf("+--------------------------------+\n");
-}
+#include <stdio.h>
+#include <string.h>
 
-int main(void)
-{
-  int age;
-  bool result;
+int main() {
   char name[50];
-  printf("Enter your first name :");
-  scanf("%s", name);
+  int age;
+  char age_str[10];
 
-  printf("Enter your age :");
-  scanf("%d", &age);
+  printf("+-----------------------------------------+\n");
+  printf("|            User Input Section           |\n");
+  printf("+-----------------------------------------+\n");
 
-  result = isEligibleToDrive(age);
-  finalResult(name, age, result);
-    return 0;
+  //For Name
+  printf("|  Enter your first name : ");
+  scanf("%49s", name);
+  printf("\033[1A\033[27C%-14s |\n", name);
+
+  //For Age
+  printf("|  Enter your age        : ");
+  scanf("%9s", age_str);
+
+  printf("\033[1A\033[27C%-14s |\n", age_str);
+  sscanf(age_str, "%d", &age);
+
+  printf("+-----------------------------------------+\n");
+
+  isEligibleToDrive(name, age);
+  return 0;
+}
+
+
+void isEligibleToDrive(char name[], int age) {
+  printf("+-----------------------------------------+\n");
+  printf("|                 Result                  |\n");
+  printf("+-----------------------------------------+\n");
+  printf("|  %-14s: %-22s |\n", "Name", name);
+  printf("|  %-14s: %-22d |\n", "Age", age);
+  printf("|  %-14s: %-22s |\n", "Result", (age >= 18) ? "Eligible to Drive" : "Not Eligible");
+  printf("+-----------------------------------------+\n");
+
 }
